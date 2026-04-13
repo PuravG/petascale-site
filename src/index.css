@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 2%;
+    --foreground: 0 0% 95%;
+    --card: 220 20% 4%;
+    --card-foreground: 0 0% 95%;
+    --popover: 220 20% 4%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 155 100% 50%;
+    --primary-foreground: 220 20% 2%;
+    --secondary: 220 10% 8%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 220 10% 10%;
+    --muted-foreground: 220 5% 50%;
+    --accent: 195 100% 50%;
+    --accent-foreground: 220 20% 2%;
+    --destructive: 350 80% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 10% 12%;
+    --input: 220 10% 12%;
+    --ring: 155 100% 50%;
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+    background: #040608;
+    color: #e5e5e5;
+    overflow-x: hidden;
+  }
+
+  code, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #040608;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a1a2e;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00ff88;
+}
+
+/* Glow text animation */
+@keyframes glow-pulse {
+  0%, 100% { text-shadow: 0 0 20px rgba(0, 255, 136, 0.3); }
+  50% { text-shadow: 0 0 40px rgba(0, 255, 136, 0.6); }
+}
+
+.glow-text {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* Smooth transitions for duration-2000 */
+.duration-2000 {
+  transition-duration: 2000ms;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(0, 255, 136, 0.3);
+  color: white;
+}
