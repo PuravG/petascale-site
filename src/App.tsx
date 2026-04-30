@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
 import { Problem } from './components/Problem';
@@ -45,6 +46,7 @@ function App() {
       <Stats ref={(el) => registerSection('stats', el)} />
       <Team ref={(el) => registerSection('team', el)} />
       <Contact ref={(el) => registerSection('contact', el)} />
+      <Analytics />
     </div>
   );
 }
